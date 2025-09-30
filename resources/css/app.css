@@ -1,0 +1,43 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Custom styles for Konungheim */
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #b8860b !important;
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    background-color: #b8860b;
+    border-color: #b8860b;
+}
+
+.btn-primary:hover {
+    background-color: #996f07;
+    border-color: #996f07;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(184, 134, 11, 0.05);
+}
+
+.character-picture {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.symbol-svg {
+    width: 32px;
+    height: 32px;
+}
