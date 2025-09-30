@@ -1,0 +1,13 @@
+{
+    "name": "quixilver/konungheim",
+    "description": "A Laravel site for the HWtP (Hardcore-Way-to-Play) for Valheim",
+    "type": "project",
+    "require": {
+        "laravel/framework": "^11.0"
+    },
+    "authors": [
+        {
+            "name": "QuixilverDev"
+        }
+    ]
+}
