@@ -10,7 +10,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <h5 class="card-title">🗡️ Characters</h5>
-                        <p class="card-text display-4">{{ Auth::user()->characters->count() }}</p>
+                        <p class="card-text display-4">{{ auth()->user()->characters->count() ?? 0 }}</p>
                         <a href="{{ route('characters.index') }}" class="btn btn-primary">View All</a>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <h5 class="card-title">👥 Roles</h5>
-                        <p class="card-text display-4">{{ App\Models\Role::count() }}</p>
+                        <p class="card-text display-4">{{ \App\Models\Role::count() }}</p>
                         <a href="{{ route('roles.index') }}" class="btn btn-primary">View All</a>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <h5 class="card-title">⭐ Perks</h5>
-                        <p class="card-text display-4">{{ App\Models\Perk::count() }}</p>
+                        <p class="card-text display-4">{{ \App\Models\Perk::count() }}</p>
                         <a href="{{ route('perks.index') }}" class="btn btn-primary">View All</a>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <h5 class="card-title">🌍 Worlds</h5>
-                        <p class="card-text display-4">{{ App\Models\World::count() }}</p>
+                        <p class="card-text display-4">{{ \App\Models\World::count() }}</p>
                         <a href="{{ route('worlds.index') }}" class="btn btn-primary">View All</a>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                         <h5 class="mb-0">Recent Characters</h5>
                     </div>
                     <div class="card-body">
-                        @if(Auth::user()->characters->count() > 0)
+                        @if(auth()->user()->characters && auth()->user()->characters->count() > 0)
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>
@@ -64,7 +64,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach(Auth::user()->characters->take(5) as $character)
+                                        @foreach(auth()->user()->characters->take(5) as $character)
                                             <tr>
                                                 <td>
                                                     @if($character->picture)
